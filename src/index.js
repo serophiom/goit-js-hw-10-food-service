@@ -12,7 +12,7 @@ const foodCardsMarkup = createFoodCardsMarkup(menu);
 
 foodSection.insertAdjacentHTML('beforeend', foodCardsMarkup);
 
-checkedCurrentTheme ()
+checkedCurrentTheme ();
 
 checkBoxRef.addEventListener('change', changeMainTheme);
 
