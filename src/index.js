@@ -17,7 +17,7 @@ checkedCurrentTheme ();
 checkBoxRef.addEventListener('change', changeMainTheme);
 
 function createFoodCardsMarkup(menu) {
-    return foodCardTpl(menu
+    return foodCardTpl(menu);
 }
 
 function changeMainTheme () {
