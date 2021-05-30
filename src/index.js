@@ -2,17 +2,17 @@ import './sass/main.scss';
 import foodCardTpl from './templates/food-cards.hbs';
 import menu from './menu.json';
 const Theme = {
-        LIGHT: 'light-theme',
-        DARK: 'dark-theme',
-      };
+    LIGHT: 'light-theme',
+    DAK: 'dark-theme',
+};
 const foodSection = document.querySelector('.js-menu');
 const checkBoxRef = document.querySelector('#theme-switch-toggle');
-const bodyRef = document.querySelector('body'); 
+const bodyRef = document.querySelector('body');
 const foodCardsMarkup = createFoodCardsMarkup(menu);
 
 foodSection.insertAdjacentHTML('beforeend', foodCardsMarkup);
 
-checkedCurrentTheme ();
+checkedCurrentTheme();
 
 checkBoxRef.addEventListener('change', changeMainTheme);
 
@@ -20,7 +20,7 @@ function createFoodCardsMarkup(menu) {
     return foodCardTpl(menu);
 }
 
-function changeMainTheme () {
+function changeMainTheme() {
     if (checkBoxRef.checked) {
         bodyRef.className = Theme.DARK;
         localStorage.setItem('current-theme', `${Theme.DARK}`);
@@ -30,7 +30,7 @@ function changeMainTheme () {
     localStorage.setItem('current-theme', `${Theme.LIGHT}`);
 }
 
-function checkedCurrentTheme () {
+function checkedCurrentTheme() {
     const themeStorage = localStorage.getItem('current-theme');
     if (themeStorage === `${Theme.DARK}`) {
         bodyRef.className = Theme.DARK;
